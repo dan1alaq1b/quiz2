@@ -1,0 +1,43 @@
+let dbUsers = [
+    {
+        username:"danial",
+        password:"12345",
+        name:"danial",
+        email:"danial@utem"
+    },
+    {
+        username:"danial",
+        password:"12345",
+        name:"danial",
+        email:"danial@utem"
+    }
+]
+
+function login(reqUsername, reqPassword){
+    let matchUser = dbUsers.find(
+        x => x.username == reqUsername          //username => user.username
+    )
+        
+    if(!matchUser) return "User not found!"     //if takde
+
+    if(matchUser.password == reqPassword){
+        return matchUser
+    }else{
+        return "Invalid password"
+    }
+}
+
+function register(reqUsername, reqPassword, reqName, reqEmail){
+    dbUsers.push({
+        username: reqUsername,
+        password: reqPassword,
+        name: reqName,
+        email: reqEmail
+    })
+}
+
+//try to login
+console.log(login("danial", "12345"))
+console.log(login("utem", "password"))
+
+register("utem")
