@@ -40,4 +40,5 @@ function register(reqUsername, reqPassword, reqName, reqEmail){
 console.log(login("danial", "12345"))
 console.log(login("utem", "password"))
 
-register("utem")
+register("utem","password","name","email")
+console.log(login("utem","password"))
