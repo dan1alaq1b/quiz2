@@ -3,18 +3,19 @@ let dbUsers = [
         username:"danial",
         password:"12345",
         name:"danial",
-        email:"danial@utem"
+        email:"danial@account"
     },
     {
-        username:"danial",
+        username:"aqib",
         password:"12345",
-        name:"danial",
-        email:"danial@utem"
+        name:"aqib",
+        email:"aqib@account"
     }
 ]
 
 function login(reqUsername, reqPassword){
-    let matchUser = dbUsers.find(
+    //let matchUser = dbUsers.find(
+    var matchUser = dbUsers.find(    
         x => x.username == reqUsername          //username => user.username
     )
         
@@ -27,12 +28,13 @@ function login(reqUsername, reqPassword){
     }
 }
 
-function register(reqUsername, reqPassword, reqName, reqEmail){
+//function register(reqUsername, reqPassword, reqName, reqEmail){
+function register(username, password, name, email){
     dbUsers.push({
-        username: reqUsername,
-        password: reqPassword,
-        name: reqName,
-        email: reqEmail
+        username: username,
+        password: password,
+        name: name,
+        email: email
     })
 }
 
